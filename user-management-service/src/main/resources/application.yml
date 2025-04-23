@@ -8,7 +8,7 @@ spring:
         simple:
           eureka:
             enabled: true
-            serviceUrl: http://localhost:8761/eureka/
+            serviceUrl: http://74.249.8.84:8761/eureka/
 
   profiles:
     active: dev

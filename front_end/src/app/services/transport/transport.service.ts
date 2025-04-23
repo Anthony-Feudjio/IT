@@ -17,7 +17,7 @@ export interface Transport {
 export class TransportService {
 
   // Base URL of the Spring Boot API
-  private baseUrl = 'http://localhost:8084/api/transports';
+  private baseUrl = 'http://74.249.8.84:8084/api/transports';
 
   constructor(private http: HttpClient) { }
 

@@ -84,7 +84,7 @@ services:
       - mysql
       - service-discovery
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/AdmissionDB?createDatabaseIfNotExist=true
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql:3306/RoomDB?createDatabaseIfNotExist=true
       SPRING_DATASOURCE_USERNAME: root
       SPRING_DATASOURCE_PASSWORD: root
     networks:
@@ -109,7 +109,7 @@ services:
     build: ./front_end
     container_name: front-app
     ports:
-      - "4200:4200"
+      - "4200:80"
     depends_on:
       - api-gateway
     networks:
