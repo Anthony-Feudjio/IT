@@ -1,21 +1,21 @@
-
-# Stage 1: Build Angular App
+# Étape 1 : Build Angular App avec Node.js
 FROM node:18-alpine as angular
 
 WORKDIR /app
-COPY package*.json ./
-RUN npm install --force
+
+# Copier tous les fichiers du projet Angular
 COPY . .
-RUN npm run build -- --configuration=production
 
-# Stage 2: Production Server
-FROM httpd:alpine
+# Installer les dépendances
+RUN npm install --force
 
-COPY httpd.conf /usr/local/apache2/conf/httpd.conf
-COPY --from=angular /app/dist/crm/browser/ /usr/local/apache2/htdocs/
+# Construire l'app Angular
+RUN npm run build
 
-RUN chown -R www-data:www-data /usr/local/apache2/htdocs && \
-    chmod -R 755 /usr/local/apache2/htdocs
+# Étape 2 : Serveur HTTP avec Apache
+FROM httpd:alpine3.15
 
-EXPOSE 80
-CMD ["httpd-foreground"]
+WORKDIR /usr/local/apache2/htdocs
+
+# Copier le build Angular depuis l'étape précédente
+COPY --from=angular /app/dist/crm/browser .
