@@ -9,7 +9,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class AuthService {
 
-  private baseUrl = 'http://localhost:8060/api/v1/auth/'; // Corrected backend URL
+  private baseUrl = 'http://localhost:8080/api/v1/auth/'; // Corrected backend URL
   router: any;
 
   constructor(private http: HttpClient) {}
@@ -70,7 +70,7 @@ private handleError(error: any) {
   }
 
 
-  private apiUrl = 'http://localhost:8060/api/v1/auth/authenticate';
+  private apiUrl = 'http://localhost:8080/api/v1/auth/authenticate';
 
   loginUser(credentials: any): Observable<any> {
     return this.http.post(this.apiUrl, credentials);
