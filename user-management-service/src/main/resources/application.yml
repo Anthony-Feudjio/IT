@@ -1,15 +1,6 @@
 spring:
   application:
     name: user-service
-
-  cloud:
-    discovery:
-      client:
-        simple:
-          eureka:
-            enabled: true
-            serviceUrl: http://74.249.8.84:8761/eureka/
-
   profiles:
     active: dev
 
@@ -28,3 +19,9 @@ springdoc:
 server:
   servlet:
     context-path: /api/v1/
+  ssl:
+    key-store: classpath:keystore.p12
+    key-store-password: 123456789
+    key-store-type: PKCS12
+    key-alias: kamdem
+

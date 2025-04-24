@@ -9,7 +9,7 @@ import { catchError } from 'rxjs/operators';
 })
 export class AuthService {
 
-  private baseUrl = 'http://isjpreenrollnow.me:8080/api/v1/auth/'; // Corrected backend URL
+  private baseUrl = 'https://isjpreenrollnow.me:8080/api/v1/auth/'; // Corrected backend URL
   router: any;
 
   constructor(private http: HttpClient) {}
@@ -70,7 +70,7 @@ private handleError(error: any) {
   }
 
 
-  private apiUrl = 'http://74.249.8.84:8080/api/v1/auth/authenticate';
+  private apiUrl = 'https://isjpreenrollnow.me:8080/api/v1/auth/authenticate';
 
   loginUser(credentials: any): Observable<any> {
     return this.http.post(this.apiUrl, credentials);

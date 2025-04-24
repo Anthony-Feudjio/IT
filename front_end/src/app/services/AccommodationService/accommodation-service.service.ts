@@ -7,7 +7,7 @@ import { catchError } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class AccommodationService {
-  private baseUrl = 'http://localhost:8084/api/rooms'; // Update with the correct Spring Boot API base URL
+  private baseUrl = 'https://isjpreenrollnow.me:8084/api/rooms'; // Update with the correct Spring Boot API base URL
 
   constructor(private http: HttpClient) {}
 

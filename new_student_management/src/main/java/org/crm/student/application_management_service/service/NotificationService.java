@@ -9,8 +9,8 @@ import org.springframework.web.client.RestTemplate;
 @Service
 public class NotificationService {
 
-    private static final String EMAIL_NOTIFICATION_URL = "http://74.249.8.84:8085/api/notifications/email";
-    private static final String SMS_NOTIFICATION_URL = "http://74.249.8.84:8085/api/notifications/sms";
+    private static final String EMAIL_NOTIFICATION_URL = "https://isjpreenrollnow.me:8085/api/notifications/email";
+    private static final String SMS_NOTIFICATION_URL = "https://isjpreenrollnow.me:8085/api/notifications/sms";
 
     @Autowired
     private RestTemplate restTemplate;

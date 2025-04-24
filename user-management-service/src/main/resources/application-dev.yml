@@ -1,8 +1,10 @@
 spring:
+  application:
+    name: user-service
   datasource:
-    url: jdbc:mysql://localhost:3306/authdb
+    url: jdbc:mysql://localhost:3306/authdb?createDatabaseIfNotExist=true
     username: root
-    password: "root1234"
+    password: ""
 
   jpa:
     hibernate:
@@ -13,23 +15,6 @@ spring:
     multipart:
       max-file-size: 50MB
       max-request-size: 50MB
-
-
-
-  eureka:
-    client:
-      service-url:
-        defaultZone: http://74.249.8.84:8761/eureka/
-      instance:
-        prefer-ip-address: true
-        leaseRenewalIntervalInSeconds: 30
-        leaseExpirationDurationInSeconds: 90
-      registration:
-        enabled: true
-
-
-
-
   #  mail:
   #    host: localhost
   #    port: 1025
@@ -70,5 +55,14 @@ application:
       expiration: 8640000
   mailing:
     frontend:
-      activation-url : http://74.249.8.84:4200/avtivate-account
-      resetUrl : http://74.249.8.84:4200/resertUrl
+      activation-url : http://localhost:4200/avtivate-account
+      resetUrl : http://localhost:4200/resertUrl
+eureka:
+  client:
+    service-url:
+      defaultZone: http://74.249.8.84:8761/eureka/
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
